@@ -25,10 +25,12 @@ import com.android.systemui.qs.tiles.HeadsUpTile
 import com.android.systemui.qs.tiles.PowerShareTile
 import com.android.systemui.qs.tiles.ProfilesTile
 import com.android.systemui.qs.tiles.ReadingModeTile
+
 import com.android.systemui.qs.tiles.SyncTile
 import com.android.systemui.qs.tiles.UsbTetherTile
 import com.android.systemui.qs.tiles.VpnTile
 import com.android.systemui.qs.tiles.WifiTile
+import com.android.systemui.qs.tiles.DataSwitchTile
 
 import dagger.Binds
 import dagger.Module
@@ -108,4 +110,10 @@ interface LineageModule {
     @IntoMap
     @StringKey(WifiTile.TILE_SPEC)
     fun bindWifiTile(wifiTile: WifiTile): QSTileImpl<*>
+
+    /** Inject DataSwitchTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(DataSwitchTile.TILE_SPEC)
+    fun bindDataSwitchTile(dataSwitchTile: DataSwitchTile): QSTileImpl<*>
 }
