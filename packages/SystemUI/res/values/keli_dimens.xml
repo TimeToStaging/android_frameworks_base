@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- QS Customizer -->
+    <dimen name="kscope_qs_customize_side_paddings">16dp</dimen>
+
     <!-- QS Media Output -->
     <dimen name="kscope_quick_settings_bottom_margin_media">12dp</dimen>
     <dimen name="kscope_quick_settings_top_margin_media">18dp</dimen>
