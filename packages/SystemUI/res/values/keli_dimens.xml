@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- QS Media Output -->
+    <dimen name="kscope_quick_settings_bottom_margin_media">12dp</dimen>
+    <dimen name="kscope_quick_settings_top_margin_media">18dp</dimen>
+
     <!-- QuickQS BrightnessBar -->
     <dimen name="keli_qqs_brightness_margin_top">8dp</dimen>
 
