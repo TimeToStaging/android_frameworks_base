@@ -80,6 +80,8 @@ import android.os.SystemClock;
 import android.os.Trace;
 import android.os.VibrationEffect;
 import android.provider.DeviceConfig;
+import android.os.Vibrator;
+import android.os.VibrationEffect;
 import android.provider.Settings;
 import android.provider.Settings.Global;
 import android.text.InputFilter;
@@ -2748,8 +2750,8 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
                     mRow.requestedLevel = userLevel;
                     Events.writeEvent(Events.EVENT_TOUCH_LEVEL_CHANGED, mRow.stream,
                             userLevel);
-                }
-            }
+            } 
+            VibrationEffect.get(VibrationEffect.EFFECT_TICK);
         }
 
         @Override
