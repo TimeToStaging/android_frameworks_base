@@ -66,6 +66,7 @@ import java.util.List;
 import java.util.concurrent.TimeoutException;
 
 import com.android.internal.util.MeizuPropsUtils;
+import com.android.internal.util.custom.PixelPropsUtils;
 
 /**
  * Base class for implementing application instrumentation code.  When running
@@ -1251,6 +1252,8 @@ public class Instrumentation {
         if (SystemProperties.getBoolean(DISGUISE_PROPS_FOR_MUSIC_APP, false)) {
             MeizuPropsUtils.setProps(packageName);
         }
+        String packageName = context.getPackageName();
+        PixelPropsUtils.setProps(packageName);
         return app;
     }
     
@@ -1272,6 +1275,8 @@ public class Instrumentation {
         if (SystemProperties.getBoolean(DISGUISE_PROPS_FOR_MUSIC_APP, false)) {
             MeizuPropsUtils.setProps(packageName);
         }
+        String packageName = context.getPackageName();
+        PixelPropsUtils.setProps(packageName);
         return app;
     }
 
