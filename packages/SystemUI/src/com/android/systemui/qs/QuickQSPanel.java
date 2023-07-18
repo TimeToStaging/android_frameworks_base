@@ -16,7 +16,6 @@
 
 package com.android.systemui.qs;
 
-import android.annotation.NonNull;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.util.AttributeSet;
@@ -29,14 +28,11 @@ import com.android.systemui.R;
 import com.android.systemui.plugins.qs.QSTile;
 import com.android.systemui.plugins.qs.QSTile.SignalState;
 import com.android.systemui.plugins.qs.QSTile.State;
-import com.android.systemui.tuner.TunerService;
 
 /**
  * Version of QSPanel that only shows N Quick Tiles in the QS Header.
  */
 public class QuickQSPanel extends QSPanel {
-
-    public static final String QS_SHOW_BRIGHTNESS = "qs_show_brightness";
 
     private static final String TAG = "QuickQSPanel";
     // A fallback value for max tiles number when setting via Tuner (parseNumTiles)
@@ -119,8 +115,9 @@ public class QuickQSPanel extends QSPanel {
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-        if (QS_SHOW_BRIGHTNESS.equals(key) && mBrightnessView != null) {
-            mBrightnessView.setVisibility(VISIBLE);
+        if (QS_SHOW_BRIGHTNESS_SLIDER.equals(key)) {
+            // No Brightness or Tooltip for you!
+            super.onTuningChanged(key, "0");
         }
     }
 
